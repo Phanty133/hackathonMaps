@@ -30,6 +30,19 @@ body{
 	text-align: center;
 }
 
+#inputContainer h1{
+	font-size: 2vw;
+}
+
+#inputContainer input[type="text"]{
+	width: 70%;
+	margin-bottom: 5px;
+}
+
+#inputContainer label{
+	font-size: max(1vw, 2vh);
+}
+
 .lds-dual-ring {
 	display: none;
 	width: 80px;
