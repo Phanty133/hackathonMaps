@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Uzņēmējdarbības karte</title>
+
+	<link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+	<link rel="stylesheet" type="text/css" href="/business/style.css"/>
+		
+	<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+	<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+	<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+	<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+</head>
+<body>
+	<div id="mainContainer">
+		<div id="mapContainer"></div>
+		<div id="inputContainer">
+			<h1>Meklē uzņēmumus, kuru nosaukums satur Tavu vārdu!</h1>
+			<input id="nameInput" type="text" placeholder="Vārds"/>
+			<button id="searchBtn">Meklēt</button><br/><br/>
+			<input type="checkbox" id="caseInput"/> <label>Ņemt vērā locījumus</label><br/>
+			<input type="checkbox" id="currentInput" checked="checked"/> <label>Rādīt arī likvidētus uzņēmumus</label><br/>
+
+			<p id="businessFound"><span id="businessCount">0</span> Uzņēmumi atrasti!</p>
+
+			<div class="lds-dual-ring" id="searchLoader"></div>
+		</div>
+
+		<div id="modalBG">
+			<div id="loadingModal">
+				<div class="lds-dual-ring" id="modalLoader"></div>
+				<p id="loadingMessage">Ielādē datus...</p>
+			</div>
+		</div>
+	</div>
+	<script src="/business/main.js"></script>
+</body>
+</html>

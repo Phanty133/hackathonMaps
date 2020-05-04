@@ -16,12 +16,12 @@ function loadRegister(){
 					resolve(registerSet);
 				}
 				else{
-					reject(this.responseText);
+					reject({status: this.status, text: this.statusText});
 				}
 			}
 		}
 
-		req.open("GET", "register.json");
+		req.open("GET", "/business/register.json");
 		req.send();
 	});
 }
@@ -30,8 +30,14 @@ function init(){
 	loadRegister().then((data)=>{
 		register = data;
 		console.log("Register loaded!");
+
+		document.getElementById("modalBG").style.display = "none";
 	}).catch((err)=>{
 		console.error(err);
+
+		const msgEl = document.getElementById("loadingMessage");
+		msgEl.className = "error";
+		msgEl.innerText = `${err.status} ${err.text}`;
 	});
 
 	initMap();
@@ -45,6 +51,7 @@ function init(){
 
 function searchNameInRegister(sub){
 	const outputSet = new Set();
+	const alsoTerminated = document.getElementById("currentInput").checked;
 
 	for(const entry of register){
 		if(entry.name === undefined) continue; 
@@ -57,7 +64,9 @@ function searchNameInRegister(sub){
 				(index === 0 || !name.charAt(index - 1).match(/[a-z]/i))
 				&& (index === name.length - 1 || !name.charAt(index + sub.length).match(/[a-zēūīāšķļžčņ]/i))
 			){
-				outputSet.add(entry);
+				if(alsoTerminated || (!alsoTerminated && entry.terminated === "")){
+					outputSet.add(entry);
+				}
 			}
 		}
 	}

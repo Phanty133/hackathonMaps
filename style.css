@@ -1,99 +1,59 @@
 body{
-	margin: 0;
-	overflow: hidden;
 	font-family: sans-serif;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr 1fr 3fr;
+	padding-top: 4vh;
+	margin-left: 25vw;
+	margin-right: 25vw;
+
+	row-gap: 5vh;
+	column-gap: 1vw;
+
+	grid-template-areas: "title title" "business tourism"
 }
 
-#mainContainer{
-	width: 100vw;
-	height: 100vw;
-}
-
-#mapContainer{
-	width: 100vw;
-	height: 100vh;
-}
-
-#inputContainer{
-	z-index: 100;
+.titleContainer{
+	font-size: 2vw;
 	background-color: #FFF;
-	width: 20%;
-	height: auto;
-	padding-bottom: 2.5vh;
-	position: absolute;
-	top: 5vh;
-	left: 5vh;
+	width: min-content;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: 3px solid #333;
 
 	-webkit-box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.3);
 	-moz-box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.3);
 	box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.3);
-	text-align: center;
+
+	grid-area: title;
 }
 
-#inputContainer h1{
-	font-size: 2vw;
-}
-
-#inputContainer input[type="text"]{
-	width: 70%;
-	margin-bottom: 5px;
-}
-
-#inputContainer label{
-	font-size: max(1vw, 2vh);
-}
-
-.lds-dual-ring {
-	display: none;
-	width: 80px;
-	height: 80px;
-  }
-  .lds-dual-ring:after {
-	content: " ";
-	display: block;
-	width: 64px;
-	height: 64px;
-	margin: 8px;
-	border-radius: 50%;
-	border: 6px solid rgb(13, 151, 206);
-	border-color: rgb(13, 151, 206) transparent rgb(13, 151, 206) transparent;
-	animation: lds-dual-ring 1.2s linear infinite;
-  }
-  @keyframes lds-dual-ring {
-	0% {
-	  transform: rotate(0deg);
-	}
-	100% {
-	  transform: rotate(360deg);
-	}
-  }
-
-#businessFound{
-	color: green;
-	display: none;
-}
-
-.infoContainer{
+a{
 	width: 100%;
-	height: auto;
-	text-align: center;
+	height: 100%;
+
+	border: 3px solid #333;
+	font-size: 2.5vw;
+	color: #333;
+	text-decoration: none;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transition: background-color 0.5s;
 }
 
-.infoContainer span{
-	white-space: nowrap;
+a:hover{
+	background-color: #CCC;
 }
 
-.infoContainer span::before{
-	content: "\A";
-	white-space: pre;
+#businessLink{
+	grid-area: "business";
 }
 
-.infoContainer span:first-child::before{
-	content: "";
-}
-
-.infoTitle{
-	color: rgb(13, 151, 206);
-	font-size: 1.5em;
-	width: 100%;
+#tourismLink{
+	grid-area: "tourism";
 }

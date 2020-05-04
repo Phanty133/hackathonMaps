@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tūrisma karte</title>
+
+	<link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+	<link rel="stylesheet" type="text/css" href="/tourist/style.css"/>
+		
+	<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+	<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+	<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+	<script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+</head>
+<body>
+	<div id="mainContainer">
+		<div id="mapContainer"></div>
+		<div id="inputContainer">
+			<h1>Jelgavas un Ozolnieku novadu apskates objektu maršrutu veidotājs</h1>
+			<h4>Ievadi, cik apskates objektus vēlies apskatīt un uzģenerē maršrutu starp tiem!</h3>
+			<input id="objInput" type="number" placeholder="Objektu skaits"/>
+			<button id="submitBtn">Ģenerēt maršrutu</button><br/><br/>
+			<input type="checkbox" id="locationInput" checked/> <label>Sākt no pašreizējās atrašanās vietas</label><br/>
+
+			<p id="routeTimeText" class="info">Maršruta laiks: <span id="routeTime">0</span></p>
+			<p id="routeDistText" class="info">Maršruta garums: <span id="routeDist">0</span> km</p>
+
+			<div class="lds-dual-ring" id="searchLoader"></div>
+		</div>
+
+
+		<div id="modalBG">
+			<div id="loadingModal">
+				<div class="lds-dual-ring" id="modalLoader"></div>
+				<p id="loadingMessage">Ielādē datus...</p>
+			</div>
+		</div>
+	</div>
+	<script src="/tourist/main.js"></script>
+</body>
+</html>
