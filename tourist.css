@@ -142,3 +142,30 @@ body{
 	padding-right: 10px;
 	font-weight: normal;
 }
+
+#backBtn{
+	border: 1px solid #333;
+	width: fit-content;
+	margin-top: 2vh;
+	font-size: 1.25vw;
+	padding: 10px;
+	cursor: pointer;
+
+	transition: background-color 0.5s;
+	text-decoration: none;
+}
+
+#backBtn:hover{
+	background-color: #CCC;
+}
+
+#backBtn:visited{
+	color: black;
+}
+
+#backContainer{
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

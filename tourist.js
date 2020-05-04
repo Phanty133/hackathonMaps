@@ -104,7 +104,7 @@ function searchHandler(){
 			waypoints.push({
 				type: "curLocation",
 				properties: {
-					name: "Atrašanās vieta",
+					Name: "Atrašanās vieta",
 					description: "Jūsu pašreizējā atrašanās vieta."
 				},
 				geometry: {
