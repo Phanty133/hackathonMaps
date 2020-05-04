@@ -1,0 +1,86 @@
+body{
+	margin: 0;
+	overflow: hidden;
+	font-family: sans-serif;
+}
+
+#mainContainer{
+	width: 100vw;
+	height: 100vw;
+}
+
+#mapContainer{
+	width: 100vw;
+	height: 100vh;
+}
+
+#inputContainer{
+	z-index: 100;
+	background-color: #FFF;
+	width: 20%;
+	height: auto;
+	padding-bottom: 2.5vh;
+	position: absolute;
+	top: 5vh;
+	left: 5vh;
+
+	-webkit-box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.3);
+	box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.3);
+	text-align: center;
+}
+
+.lds-dual-ring {
+	display: none;
+	width: 80px;
+	height: 80px;
+  }
+  .lds-dual-ring:after {
+	content: " ";
+	display: block;
+	width: 64px;
+	height: 64px;
+	margin: 8px;
+	border-radius: 50%;
+	border: 6px solid rgb(13, 151, 206);
+	border-color: rgb(13, 151, 206) transparent rgb(13, 151, 206) transparent;
+	animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+	0% {
+	  transform: rotate(0deg);
+	}
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+
+#businessFound{
+	color: green;
+	display: none;
+}
+
+.infoContainer{
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+.infoContainer span{
+	white-space: nowrap;
+}
+
+.infoContainer span::before{
+	content: "\A";
+	white-space: pre;
+}
+
+.infoContainer span:first-child::before{
+	content: "";
+}
+
+.infoTitle{
+	color: rgb(13, 151, 206);
+	font-size: 1.5em;
+	width: 100%;
+}
