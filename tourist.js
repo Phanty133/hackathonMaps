@@ -90,7 +90,7 @@ function searchHandler(){
 	const objCount = parseInt(document.getElementById("objInput").value);
 	const useCurrentLocation = document.getElementById("locationInput").checked;
 
-	if(objCount === undefined || objCount === 0 || isNaN(objCount)) {
+	if(objCount === undefined || objCount === 0 || isNaN(objCount) || objCount < 0) {
 		showSearchLoader(false);
 		return;
 	}
