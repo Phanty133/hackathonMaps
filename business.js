@@ -21,7 +21,7 @@ function loadRegister(){
 			}
 		}
 
-		req.open("GET", "/business/register.json");
+		req.open("GET", "register.json");
 		req.send();
 	});
 }

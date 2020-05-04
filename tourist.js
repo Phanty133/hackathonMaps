@@ -21,7 +21,7 @@ function loadObjects(){
 			}
 		}
 
-		req.open("GET", "/tourist/objects.json");
+		req.open("GET", "objects.json");
 		req.send();
 	});
 }
